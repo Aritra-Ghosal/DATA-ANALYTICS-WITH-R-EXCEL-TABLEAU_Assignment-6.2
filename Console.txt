@@ -1,0 +1,10 @@
+> library(titanic)
+> c <- titanic_train
+> #Question 
+> tapply(c$Fare,c$Pclass,mean)
+       1        2        3 
+84.15469 20.66218 13.67555 
+> qplot(Fare,Pclass,data = c, geom = c("point","smooth"),
++       method = "lm", formula = y~x, col = Sex, 
++       main = "Regression of Fare on Passenger Class By Each Sex",
++       ylab = "Passenger class", xlab = "Fare")
